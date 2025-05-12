@@ -1,36 +1,49 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useInView } from 'react-intersection-observer';
 import STLModel from './STLModel';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './CubeSection.css'; // Create this
 
 const CubeSection = () => {
   const { ref, inView } = useInView({ threshold: 0.1 });
+  const bgRef = useRef(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      if (bgRef.current) {
+        bgRef.current.style.setProperty('--x', `${x}%`);
+        bgRef.current.style.setProperty('--y', `${y}%`);
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
-    <div
-      ref={ref}
-      className="bg-white d-flex flex-column align-items-center text-center py-5"
-      style={{ minHeight: '100vh' }}
-    >
-      <div className="container">
+    <div ref={ref} className="cube-section-wrapper">
+      <div className="animated-bg" ref={bgRef}></div>
+
+      <div className="content text-center">
         <p className="h5 text-muted mb-4">Purdue ACM</p>
         <h1 className="display-1 fw-bold text-dark mb-2">SIGAPP</h1>
-      </div>
 
-      <div className="w-100" style={{ height: '60vh' }}>
-        <Canvas style={{ width: '100%', height: '100%' }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          {inView && (
-            <STLModel
-              url="/models/3dlogo.stl"
-              position={[0, 0, 0]}
-              rotation={[0, 0, 0]}
-              scale={1.5}
-            />
-          )}
-        </Canvas>
+        <div className="model-container">
+          <Canvas style={{ width: '100%', height: '100%' }}>
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} />
+            {inView && (
+              <STLModel
+                url="/models/3dlogo.stl"
+                position={[0, 0, 0]}
+                rotation={[0, 0, 0]}
+                scale={1.5}
+              />
+            )}
+          </Canvas>
+        </div>
       </div>
     </div>
   );

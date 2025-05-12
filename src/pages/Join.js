@@ -2,7 +2,14 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Join = React.forwardRef((props, ref) => (
-  <section id="join" ref={ref} className="py-5 bg-success text-white">
+  <section
+    id="join"
+    ref={ref}
+    className="py-5 text-white"
+    style={{
+      background: 'linear-gradient(135deg, #438d5f, #d3efc4)',
+    }}
+  >
     <div className="container text-center">
       <h2 className="fw-bold mb-3">Join Us</h2>
       <p className="lead mb-3">

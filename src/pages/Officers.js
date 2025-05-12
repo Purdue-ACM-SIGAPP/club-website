@@ -14,7 +14,10 @@ const Officers = React.forwardRef((props, ref) => (
 
       <div className="d-flex flex-row justify-content-center flex-wrap gap-5">
         {/* Officer 1 */}
-        <div className="d-flex align-items-center" style={{ maxWidth: '600px' }}>
+        <div
+          className="d-flex align-items-center"
+          style={{ maxWidth: '600px' }}
+        >
           <div className="me-4 text-end" style={{ width: '150px' }}>
             <p className="fw-semibold">President</p>
             <p className="small text-muted">SIGAPP Lead</p>
@@ -26,13 +29,18 @@ const Officers = React.forwardRef((props, ref) => (
                   src="/images/soleil.jpg"
                   alt="Soleil Pham"
                   className="img-fluid mb-2 rounded"
-                  style={{ height: '140px', width: '140px', objectFit: 'cover' }}
+                  style={{
+                    height: '140px',
+                    width: '140px',
+                    objectFit: 'cover',
+                  }}
                 />
                 <h5>Soleil Pham</h5>
               </div>
               <div className="card-back d-flex flex-column justify-content-center">
                 <p>
-                  Sophomore in Computer Science, Machine Intelligence & Cyber Security tracks.
+                  Sophomore in Computer Science, Machine Intelligence & Cyber
+                  Security tracks.
                 </p>
               </div>
             </div>
@@ -44,7 +52,10 @@ const Officers = React.forwardRef((props, ref) => (
         </div>
 
         {/* Officer 2 */}
-        <div className="d-flex align-items-center" style={{ maxWidth: '600px' }}>
+        <div
+          className="d-flex align-items-center"
+          style={{ maxWidth: '600px' }}
+        >
           <div className="me-4 text-end" style={{ width: '150px' }}>
             <p className="fw-semibold">Vice President</p>
             <p className="small text-muted">Internal Coordinator</p>
@@ -56,14 +67,16 @@ const Officers = React.forwardRef((props, ref) => (
                   src="/images/david.jpg"
                   alt="David Panek"
                   className="img-fluid mb-2 rounded"
-                  style={{ height: '140px', width: '140px', objectFit: 'cover' }}
+                  style={{
+                    height: '140px',
+                    width: '140px',
+                    objectFit: 'cover',
+                  }}
                 />
                 <h5>David Panek</h5>
               </div>
               <div className="card-back d-flex flex-column justify-content-center">
-                <p>
-                  Junior in Computer Science, Machine Learning track.
-                </p>
+                <p>Junior in Computer Science, Machine Learning track.</p>
               </div>
             </div>
           </div>
