@@ -51,7 +51,7 @@ const styles = {
     color: '#fff',
     textAlign: 'center',
     borderTop: '1px solid #333',
-    marginTop: '4rem',
+    // marginTop: '4rem',
   },
   icons: {
     display: 'flex',

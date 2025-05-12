@@ -71,7 +71,7 @@ const styles = {
   section: {
     // padding: '6rem 1rem',
     // minHeight: '100vh',
-    // scrollMarginTop: '80px',
+    scrollMarginTop: '60px',
   },
 };
 

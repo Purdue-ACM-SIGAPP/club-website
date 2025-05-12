@@ -12,7 +12,7 @@ const Join = React.forwardRef((props, ref) => (
       <p>
         Hop in our{' '}
         <a
-          href="https://discord.gg"
+          href="https://discord.com/invite/MxFEARj"
           className="text-white text-decoration-underline"
           target="_blank"
           rel="noopener noreferrer"
