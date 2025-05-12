@@ -15,24 +15,30 @@ const Footer = () => {
           href="https://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
-          style={styles.link}
+          style={styles.iconLink}
         >
-          <FontAwesomeIcon icon={faInstagram} size="2x" />
+          <FontAwesomeIcon icon={faInstagram} size="lg" />
         </a>
         <a
           href="https://github.com"
           target="_blank"
           rel="noopener noreferrer"
-          style={styles.link}
+          style={styles.iconLink}
         >
-          <FontAwesomeIcon icon={faGithub} size="2x" />
+          <FontAwesomeIcon icon={faGithub} size="lg" />
         </a>
-        <a href="mailto:you@example.com" style={styles.link}>
-          <FontAwesomeIcon icon={faEnvelope} size="2x" />
+        <a href="mailto:you@example.com" style={styles.iconLink}>
+          <FontAwesomeIcon icon={faEnvelope} size="lg" />
         </a>
       </div>
-      <button onClick={scrollToTop} style={styles.button}>
-        <FontAwesomeIcon icon={faArrowUp} /> Top
+
+      <button
+        onClick={scrollToTop}
+        style={styles.button}
+        onMouseEnter={(e) => (e.target.style.backgroundColor = '#9ddf92')}
+        onMouseLeave={(e) => (e.target.style.backgroundColor = '#b1e8a6')}
+      >
+        <FontAwesomeIcon icon={faArrowUp} /> Back to Top
       </button>
     </footer>
   );
@@ -40,27 +46,35 @@ const Footer = () => {
 
 const styles = {
   footer: {
-    padding: '1rem',
-    backgroundColor: '#222',
+    padding: '2rem 1rem',
+    backgroundColor: '#121212',
     color: '#fff',
     textAlign: 'center',
-    marginTop: '2rem',
+    borderTop: '1px solid #333',
+    marginTop: '4rem',
   },
   icons: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '1.5rem',
     marginBottom: '1rem',
   },
-  link: {
-    margin: '0 1rem',
-    color: 'white',
+  iconLink: {
+    color: '#bbb',
+    fontSize: '1.5rem',
+    transition: 'color 0.3s ease',
     textDecoration: 'none',
   },
   button: {
-    backgroundColor: '#444',
-    color: '#fff',
+    backgroundColor: '#b1e8a6',
+    color: '#000',
     border: 'none',
-    padding: '0.5rem 1rem',
+    padding: '0.6rem 1.2rem',
+    fontSize: '1rem',
+    fontWeight: 'bold',
     cursor: 'pointer',
-    borderRadius: '4px',
+    borderRadius: '6px',
+    transition: 'background-color 0.3s ease',
   },
 };
 

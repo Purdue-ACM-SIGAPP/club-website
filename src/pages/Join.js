@@ -1,16 +1,27 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Join = React.forwardRef((props, ref) => (
-  <section id="join" ref={ref} style={props.style}>
-    <h2>Join Us</h2>
-    <p>
-      Want to build cool apps, learn valuable skills, and be part of a great community?
-      SIGAPP welcomes students of all experience levels. Whether you're brand new or already coding, there's a place for you.
-    </p>
-    <p>
-      To get started, join our <a href="https://discord.gg" target="_blank" rel="noopener noreferrer">Discord server</a>
-      for meeting announcements, project updates, and more.
-    </p>
+  <section id="join" ref={ref} className="py-5 bg-success text-white">
+    <div className="container text-center">
+      <h2 className="fw-bold mb-3">Join Us</h2>
+      <p className="lead mb-3">
+        Want to build real apps, learn new skills, and work on a fun team?
+        SIGAPP is open to all experience levels.
+      </p>
+      <p>
+        Hop in our{' '}
+        <a
+          href="https://discord.gg"
+          className="text-white text-decoration-underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Discord server
+        </a>{' '}
+        to get started!
+      </p>
+    </div>
   </section>
 ));
 
