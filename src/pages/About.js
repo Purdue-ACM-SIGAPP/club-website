@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const About = React.forwardRef((props, ref) => (
   <section id="about" ref={ref} className="py-5 bg-white text-dark">
     <div className="container">
-      <h2 className="mb-4 fw-bold">WHAT WE DO</h2>
+      <h2 className="mb-4 fw-bold">What We Do</h2>
       <p className="mb-4">
         At SIGAPP, we bring ideas to life by building real-world apps for
         real-world needs. Whether you're new to coding or a seasoned developer,

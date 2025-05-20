@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useInView } from 'react-intersection-observer';
-import STLModel from './STLModel';
+import GLTFModel from './GLTFModel';
 import './CubeSection.css'; // Create this
 
 const CubeSection = () => {
@@ -31,15 +31,17 @@ const CubeSection = () => {
         <h1 className="display-1 fw-bold text-dark mb-2">SIGAPP</h1>
 
         <div className="model-container">
-          <Canvas style={{ width: '100%', height: '100%' }}>
-            <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} />
+          <Canvas orthographic camera={{ zoom: 50, position: [0, 0, 100] }}>
+            {/* <ambientLight intensity={0.5} /> */}
+            <ambientLight intensity={1.5} />
+            <directionalLight position={[20, 50, 50]} intensity={10} />
+            {/* <pointLight position={[10, 10, 10]} /> */}
             {inView && (
-              <STLModel
-                url="/models/3dlogo.stl"
+              <GLTFModel
+                url="/models/3dlogo.glb"
                 position={[0, 0, 0]}
                 rotation={[0, 0, 0]}
-                scale={1.5}
+                scale={50}
               />
             )}
           </Canvas>
