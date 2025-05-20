@@ -2,14 +2,16 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Projects.css';
 import soleilImg from '../images/soleil.jpg';
-// import davidImg from '../images/david.jpg';
+import davidImg from '../images/david.jpeg';
 
 const Officers = React.forwardRef((props, ref) => (
   <section id="officers" ref={ref} className="py-5 bg-white text-dark">
     <div className="container">
       <h2 className="fw-bold mb-4">Our Officers</h2>
       <p className="mb-5">
-        SIGAPP is led by passionate students who manage projects, coordinate technical infrastructure, and guide new members. Leadership is open to any motivated student ready to grow and contribute.
+        SIGAPP is led by passionate students who manage projects, coordinate
+        technical infrastructure, and guide new members. Leadership is open to
+        any motivated student ready to grow and contribute.
       </p>
 
       <div className="d-flex flex-row justify-content-center flex-wrap gap-5">
@@ -28,11 +30,10 @@ const Officers = React.forwardRef((props, ref) => (
           title="Vice President"
           subtitle="Assistant Project Manager"
           name="David Panek"
-          image="../images/david.jpg"
+          image={davidImg}
           leftDesc="Ensures club operations align with ACM"
           rightDesc="Assists President and manages internal support"
         />
-
       </div>
     </div>
   </section>
@@ -53,9 +54,9 @@ const OfficerCard = ({ title, subtitle, name, image, leftDesc, rightDesc }) => (
             alt={name}
             className="img-fluid mb-3 rounded"
             style={{
-               width: '200px',
-                height: '200px',
-                objectFit: 'cover',
+              width: '200px',
+              height: '200px',
+              objectFit: 'cover',
             }}
           />
           <h5>{name}</h5>

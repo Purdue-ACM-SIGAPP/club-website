@@ -61,23 +61,23 @@ const Projects = React.forwardRef((props, ref) => {
         <Slider {...settings}>
           {projects.map((project, index) => (
             <div key={index} className="d-flex justify-content-center">
-      <div className="flip-card">
-        <div className="flip-card-inner">
-          {/* Front */}
-          <div className="flip-card-front">
-            <img src={project.image} alt={project.title} />
-            <h5 className="mt-3">{project.title}</h5>
-          </div>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  {/* Front */}
+                  <div className="flip-card-front">
+                    <img src={project.image} alt={project.title} />
+                    <h5 className="mt-3">{project.title}</h5>
+                  </div>
 
-          {/* Back */}
-          <div className="flip-card-back">
-            <h5>{project.title}</h5>
-            <p className="small text-muted">{project.description}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  ))}
+                  {/* Back */}
+                  <div className="flip-card-back">
+                    <h5>{project.title}</h5>
+                    <p className="small text-muted">{project.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </Slider>
       </div>
     </section>

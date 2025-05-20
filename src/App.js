@@ -8,11 +8,13 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Officers from './pages/Officers';
 import Join from './pages/Join';
-import { useInView } from 'react-intersection-observer';
 
 function App() {
+  const [hasAutoScrolled, setHasAutoScrolled] = useState(false);
+
   const [activeSection, setActiveSection] = useState('');
   const sectionRefs = {
+    cube: useRef(null),
     home: useRef(null),
     about: useRef(null),
     projects: useRef(null),
@@ -29,7 +31,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.5 }
     );
 
     Object.values(sectionRefs).forEach((ref) => {
@@ -43,9 +45,35 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const cube = sectionRefs.cube.current;
+    const home = sectionRefs.home.current;
+
+    if (!cube || !home || hasAutoScrolled) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Trigger when LESS than 60% of Cube is visible
+        if (entry.intersectionRatio < 0.4) {
+          home.scrollIntoView({ behavior: 'smooth' });
+          setHasAutoScrolled(true);
+        }
+      },
+      {
+        threshold: [0.4, 1.0], // Detect transition around 60% visible
+      }
+    );
+
+    observer.observe(cube);
+
+    return () => observer.disconnect();
+  }, [sectionRefs.cube, sectionRefs.home, hasAutoScrolled]);
+
   return (
     <>
-      <CubeSection />
+      <section id="cube" ref={sectionRefs.cube}>
+        <CubeSection />
+      </section>
       <Header activeSection={activeSection} />
       <section id="home" ref={sectionRefs.home} style={styles.section}>
         <Home />
