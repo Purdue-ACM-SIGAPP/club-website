@@ -1,6 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Projects.css';
+import soleilImg from '../images/soleil.jpg';
+// import davidImg from '../images/david.jpg';
 
 const Officers = React.forwardRef((props, ref) => (
   <section id="officers" ref={ref} className="py-5 bg-white text-dark">
@@ -16,7 +18,7 @@ const Officers = React.forwardRef((props, ref) => (
           title="President"
           subtitle="Lead Project Manager"
           name="Soleil Pham"
-          image="/images/soleil.jpg"
+          image={soleilImg}
           leftDesc="Sets direction and ensures release targets"
           rightDesc="Oversees Team Leads, deployment, and progress"
         />
@@ -26,7 +28,7 @@ const Officers = React.forwardRef((props, ref) => (
           title="Vice President"
           subtitle="Assistant Project Manager"
           name="David Panek"
-          image="/images/david.jpg"
+          image="../images/david.jpg"
           leftDesc="Ensures club operations align with ACM"
           rightDesc="Assists President and manages internal support"
         />
@@ -49,11 +51,11 @@ const OfficerCard = ({ title, subtitle, name, image, leftDesc, rightDesc }) => (
           <img
             src={image}
             alt={name}
-            className="img-fluid mb-2 rounded"
+            className="img-fluid mb-3 rounded"
             style={{
-              height: '140px',
-              width: '140px',
-              objectFit: 'cover',
+               width: '200px',
+                height: '200px',
+                objectFit: 'cover',
             }}
           />
           <h5>{name}</h5>
