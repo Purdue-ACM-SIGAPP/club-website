@@ -13,7 +13,7 @@ const Footer = () => {
       <div style={styles.footerContent}>
         {/* Left-aligned text */}
         <div style={{ ...styles.sideText, textAlign: 'left' }}>
-          Purdue ACM SIGApp — Since 2013
+          Purdue ACM SIGAPP — Since 2013
         </div>
 
         {/* Center icons + button */}
